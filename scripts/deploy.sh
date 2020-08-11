@@ -31,4 +31,3 @@ else
   echo "Lint Test unsuccessful, check CloudFormation in the AWS console to troubleshoot failure" >&2
   exit 1
 fi
-helm install ${APP_NAME} . --values values/${APP_NAME}.yaml

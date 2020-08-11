@@ -20,10 +20,12 @@ A Linux(RedHat/yum based) machine with an admin IAM named 'eksadmin' attached TO
 
 ### Initial install(no helm charts are deployed yet):
 
-1. Create a values/<app_name>.yaml with your cluster name, image, and what you'd like to name your app
+CURRENTLY BROKEN/NEEDS WORK
+1. Modify the example nodejs/charts/nodejs334, populating nodejs/charts/nodejs334/values.yaml with your cluster name, image, and what you'd like to name your app
 2. `./scripts/deploy.sh <app_name>`
-
-
+3. `helm install nodejs1 ./nodejs` # Will install everything in ./nodejs
+4. # Does not yet work - Modify the example ingress/charts/ingress1, populating ingress/charts/ingress1/values.yaml with your app1name, app2name, etc.
+5. # Does not yet work -`helm install ingress ./ingress}` 
 ## Cleanup
 
 To delete the EKS cluster:
