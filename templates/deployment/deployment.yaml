@@ -14,7 +14,7 @@ spec:
         app:  {{ .Values.appname }}
     spec:
       containers:
-      - image: {{ .Values.nodejs.image }}
+      - image: {{ $.Values.nodejs.image }}
         imagePullPolicy: Always
         name:  {{ .Values.appname }}
         ports:

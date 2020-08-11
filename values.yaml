@@ -1,13 +1,8 @@
-# Default values for eksdemo.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-# Release-wide Values
+  # This is a YAML-formatted file.
+  # Declare variables to be passed into your templates.
 clustername: dev33
-appname: nodejs334
+appname: nodejs336
 replicas: 5
-version: 'latest'
-
-# Service Specific Values
+version: latest
 nodejs:
   image: briantainer/node-app
