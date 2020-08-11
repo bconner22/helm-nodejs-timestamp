@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name:  {{ .Values.app1name }}
+  namespace: {{ .Values.app1name }}
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+  labels:
+    app: {{ .Values.app1name }}
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: nodejs334
+              servicePort: 80
+          - path: /nodejs335
+            backend:
+              serviceName: nodejs335
+              servicePort: 80

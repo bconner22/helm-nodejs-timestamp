@@ -1,0 +1,16 @@
+  # This is a YAML-formatted file.
+  # Declare variables to be passed into your templates.
+- nodejs334:
+    clustername: dev33
+    appname: nodejs334
+    replicas: 5
+    version: latest
+    nodejs:
+      image: briantainer/node-app
+- nodejs335:
+    clustername: dev33
+    appname: nodejs335
+    replicas: 5
+    version: latest
+    nodejs:
+      image: briantainer/node-app

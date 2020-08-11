@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  {{ .Values.appname }}
+  namespace:  {{ .Values.appname }}
+spec:
+  selector:
+    matchLabels:
+      app:  {{ .Values.appname }}
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app:  {{ .Values.appname }}
+    spec:
+      containers:
+      - image: {{ .Values.nodejs.image }}
+        imagePullPolicy: Always
+        name:  {{ .Values.appname }}
+        ports:
+        - containerPort: 80
