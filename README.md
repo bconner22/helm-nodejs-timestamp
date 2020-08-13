@@ -21,7 +21,7 @@ A Linux(RedHat/yum based) machine with an admin IAM named 'eksadmin' attached TO
 ### Initial install(no helm charts are deployed yet):
 
 1. In values.yaml, set your clustername, appname, replicas, and image.
-2. `./scripts/deploy.sh <app_name>`
+2. `./scripts/deploy.sh`
 
 
 ## Cleanup

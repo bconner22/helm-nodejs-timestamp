@@ -2,8 +2,8 @@
 helm lint ../.
 if [ $? -eq 0 ]
 then
-  echo "Unit Test successful, $CLUSTER_NAME is up and you can now issue kubectl commands to it"
+  echo "Helm lint successful, $APP_NAME will be deployed."
 else
-  echo "Unit Test unsuccessful, check CloudFormation in the AWS console to troubleshoot failure" >&2
+  echo "Unit Test unsuccessful, check helm errors above." >&2
   exit 1
 fi

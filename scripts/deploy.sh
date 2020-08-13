@@ -1,6 +1,6 @@
 #!/bin/bash
 export CLUSTER_NAME=$(grep 'clustername:' values.yaml | tail -n1 | awk '{ print $2}')
-export APP_NAME=$1
+export APP_NAME=$(grep 'appname:' values.yaml | tail -n1 | awk '{ print $2}')
 # This will create an IAM policy to allow the ingress to create an ALB
 curl -o iam-policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/v1.1.8/docs/examples/iam-policy.json
 aws iam create-policy \
@@ -28,7 +28,7 @@ if [ $? -eq 0 ]
 then
   echo "Lint Test successful, deploying release ${APP_NAME}"
 else
-  echo "Lint Test unsuccessful, check CloudFormation in the AWS console to troubleshoot failure" >&2
+  echo "Lint Test unsuccessful, helm errors above." >&2
   exit 1
 fi
 helm install ${APP_NAME} . --values values.yaml
