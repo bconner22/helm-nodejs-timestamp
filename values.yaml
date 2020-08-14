@@ -1,6 +1,6 @@
   # This is a YAML-formatted file.
   # Declare variables to be passed into your templates.
-clustername: brian
+clustername: brian22
 appname: nodejs336
 replicas: 5
 version: latest

@@ -22,8 +22,7 @@ eksctl create iamserviceaccount \
     --approve
 
 helm repo update
-echo "Little lint test on helm chart"
-helm lint .
+./tests/helm_lint.sh
 if [ $? -eq 0 ]
 then
   echo "Lint Test successful, deploying release ${APP_NAME}"
